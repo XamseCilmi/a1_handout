@@ -133,32 +133,32 @@ struct bits8 bits8_mul(struct bits8 x, struct bits8 y) {
 
   unsigned int y2_int = bit_to_int(y.b2);
   unsigned int y2 = (y2_int << 7) | (y2_int << 6) | (y2_int << 5) | (y2_int << 4) | (y2_int << 3) | (y2_int << 2) | (y2_int << 1) | y2_int;
-  product = bits8_from_int((x_int & y2) << 1);
+  product = bits8_from_int((x_int & y2) << 2);
   z = bits8_add(z, product);
 
   unsigned int y3_int = bit_to_int(y.b3);
   unsigned int y3 = (y3_int << 7) | (y3_int << 6) | (y3_int << 5) | (y3_int << 4) | (y3_int << 3) | (y3_int << 2) | (y3_int << 1) | y3_int;
-  product = bits8_from_int((x_int & y3) << 1);
+  product = bits8_from_int((x_int & y3) << 3);
   z = bits8_add(z, product);
 
   unsigned int y4_int = bit_to_int(y.b4);
   unsigned int y4 = (y4_int << 7) | (y4_int << 6) | (y4_int << 5) | (y4_int << 4) | (y4_int << 3) | (y4_int << 2) | (y4_int << 1) | y4_int;
-  product = bits8_from_int((x_int & y4) << 1);
+  product = bits8_from_int((x_int & y4) << 4);
   z = bits8_add(z, product);
 
   unsigned int y5_int = bit_to_int(y.b5);
   unsigned int y5 = (y5_int << 7) | (y5_int << 6) | (y5_int << 5) | (y5_int << 4) | (y5_int << 3) | (y5_int << 2) | (y5_int << 1) | y5_int;
-  product = bits8_from_int((x_int & y5) << 1);
+  product = bits8_from_int((x_int & y5) << 5);
   z = bits8_add(z, product);
 
   unsigned int y6_int = bit_to_int(y.b6);
   unsigned int y6 = (y6_int << 7) | (y6_int << 6) | (y6_int << 5) | (y6_int << 4) | (y6_int << 3) | (y6_int << 2) | (y6_int << 1) | y6_int;
-  product = bits8_from_int((x_int & y6) << 1);
+  product = bits8_from_int((x_int & y6) << 6);
   z = bits8_add(z, product);
 
   unsigned int y7_int = bit_to_int(y.b7);
   unsigned int y7 = (y7_int << 7) | (y7_int << 6) | (y7_int << 5) | (y7_int << 4) | (y7_int << 3) | (y7_int << 2) | (y7_int << 1) | y7_int;
-  product = bits8_from_int((x_int & y7) << 1);
+  product = bits8_from_int((x_int & y7) << 7);
   z = bits8_add(z, product);
 
   return z;
