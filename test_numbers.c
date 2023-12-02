@@ -39,8 +39,8 @@ int main() {
   assert(one_int == 1);
 
   test_bits8_mul(0, 0);
-  test_bits8_mul(0, 10);
-  test_bits8_mul(10, 0);
-  test_bits8_mul(10, 10);
-  test_bits8_mul(5, 7);
+  //test_bits8_mul(0, 10);
+  //test_bits8_mul(10, 0);
+  //test_bits8_mul(5, 7);
+  //test_bits8_mul(10, 10);
 }

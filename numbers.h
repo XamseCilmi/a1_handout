@@ -94,6 +94,17 @@ struct bits8 bits8_add(struct bits8 x, struct bits8 y) {
   return s;
 }
 
+void bits8_initialize_zeros(struct bits8* x) {
+  x->b0 = bit_from_int(0);
+  x->b1 = bit_from_int(0);
+  x->b2 = bit_from_int(0);
+  x->b3 = bit_from_int(0);
+  x->b4 = bit_from_int(0);
+  x->b5 = bit_from_int(0);
+  x->b6 = bit_from_int(0);
+  x->b7 = bit_from_int(0);
+}
+
 struct bits8 bits8_negate(struct bits8 x) {
   x.b0 = bit_not(x.b0);
   x.b1 = bit_not(x.b1);
@@ -105,20 +116,15 @@ struct bits8 bits8_negate(struct bits8 x) {
   x.b7 = bit_not(x.b7);
 
   struct bits8 one;
+  bits8_initialize_zeros(&one);
   one.b0 = bit_from_int(1);
-  one.b1 = bit_from_int(0);
-  one.b2 = bit_from_int(0);
-  one.b3 = bit_from_int(0);
-  one.b4 = bit_from_int(0);
-  one.b5 = bit_from_int(0);
-  one.b6 = bit_from_int(0);
-  one.b7 = bit_from_int(0);
 
   return bits8_add(x, one);
 }
 
 struct bits8 bits8_mul(struct bits8 x, struct bits8 y) {
   struct bits8 z;
+  bits8_initialize_zeros(&z);
   unsigned int x_int = bits8_to_int(x);
 
   unsigned int y0_int = bit_to_int(y.b0);
